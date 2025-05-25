@@ -29,7 +29,22 @@ def adicionar_item():
     }
     cardapio.append(novo_item)
     salvar_cardapio(cardapio)
-    print("Item adicionado com sucesso!")        
+    print("Item adicionado com sucesso!")
+
+def listar_cardapio():
+    cardapio = carregar_cardapio()
+    if not cardapio:
+        print("Cardápio vazio.")
+    else:
+        print("\nCARDÁPIO ATUAL:")
+        for item in cardapio:
+            print("-" * 40)
+            print(f"ID: {item['id']}")
+            print(f"Nome: {item['nome']}")
+            print(f"Descrição: {item['descricao']}")
+            print(f"Ingredientes: {item['ingredientes']}")
+            print(f"Preço: R${item['preco']:.2f}")
+            print(f"Categoria: {item['categoria']}")            
 
 
 
