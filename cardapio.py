@@ -16,6 +16,21 @@ def salvar_cardapio(cardapio):
     with open(ARQUIVO_CARDAPIO, 'w', encoding='utf-8') as f:
         json.dump(cardapio, f, indent=4, ensure_ascii=False)
 
+def adicionar_item():
+    cardapio = carregar_cardapio()
+    novo_item = {
+        'id': len(cardapio) + 1,
+        'nome': input("Nome do prato/bebida: "),
+        'descricao': input("Descrição: "),
+        'ingredientes': input("Ingredientes (separados por vírgula): "),
+        'preco': float(input("Preço: R$ ").replace(',', '.')),
+        'categoria': input("Categoria (entrada, prato principal, sobremesa, bebida): ").lower()
+
+    }
+    cardapio.append(novo_item)
+    salvar_cardapio(cardapio)
+    print("Item adicionado com sucesso!")        
+
 
 
 def atualizar_item():
@@ -42,3 +57,5 @@ def atualizar_item():
             print("Item atualizado com sucesso!")
             return
     print("Item não encontrado.")
+
+
