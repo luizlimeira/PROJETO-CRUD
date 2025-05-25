@@ -4,13 +4,14 @@ import os
 ARQUIVO_FICHAS = 'ficha.json'
 
 def carregar_fichas():
-    if not os.path.exists(ARQUIVO_FICHAS):
+    try:
+        with open(ARQUIVO_FICHAS, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("Arquivo inválido ou não encontrado. Criando novo...")
         with open(ARQUIVO_FICHAS, 'w') as f:
             json.dump([], f)
         return []
-    
-    with open(ARQUIVO_FICHAS, 'r') as f:
-        return json.load(f)
 
 def salvar_fichas(fichas):
     with open(ARQUIVO_FICHAS, 'w') as f:
@@ -142,3 +143,32 @@ def excluir_fichas(fichas):
             return
     
     print("Ficha não encontrada.")
+
+def menu_fichas():
+    while True:
+        fichas = carregar_fichas()
+        
+        print("\n--- MENU FICHAS ---")
+        print("1. Adicionar Ficha")
+        print("2. Visualizar Fichas")
+        print("3. Editar Ficha")
+        print("4. Excluir Ficha")
+        print("0. Voltar")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            fichas = adicionar_ficha(fichas)
+        elif opcao == "2":
+            visualizar_fichas(fichas)
+        elif opcao == "3":
+            editar_fichas(fichas)
+        elif opcao == "4":
+            excluir_fichas(fichas)
+        elif opcao == "0":
+            return
+        else:
+            print("\nOpção inválida!")
+
+if __name__ == "__ficha__":
+    menu_fichas()
