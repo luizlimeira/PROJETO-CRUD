@@ -59,3 +59,12 @@ def atualizar_item():
     print("Item não encontrado.")
 
 
+def remover_item():
+    cardapio = carregar_cardapio()
+    id_item = int(input("Digite o ID do item que deseja remover: "))
+    for item in cardapio:
+        if item['id'] == id_item:
+            cardapio.remove(item)
+            salvar_cardapio(cardapio)
+            print("Item removido com sucesso!")
+            return
