@@ -44,7 +44,18 @@ def listar_cardapio():
             print(f"Descrição: {item['descricao']}")
             print(f"Ingredientes: {item['ingredientes']}")
             print(f"Preço: R${item['preco']:.2f}")
-            print(f"Categoria: {item['categoria']}")            
+            print(f"Categoria: {item['categoria']}")  
+
+def filtrar_por_categoria():
+    cardapio = carregar_cardapio()
+    categoria = input("Digite a categoria: ").lower()
+    filtrados = [p for p in cardapio if p['categoria'].lower() == categoria]
+    if filtrados:
+        print("Produtos na categoria:", categoria)
+        for p in filtrados:
+            print(f"{p['nome']} - R${p['preco']:.2f}")
+    else:
+        print("Nenhum produto nessa categoria.")                         
 
 
 
