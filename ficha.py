@@ -117,18 +117,89 @@ def visualizar_fichas(fichas):
         input("\nPressione Enter para voltar...")
 
 def editar_fichas(fichas):
-    nome = input("Digite o nome da ficha que deseja editar: ").strip().lower()
-    
-    for ficha in fichas:
-        if ficha['nome'].lower() == nome:
-            print(f"\nEditando ficha: {ficha['nome']}")
-            ficha['nome'] = input("Novo nome: ").capitalize()
-            ficha['categoria'] = input("Nova categoria: ").upper()
-            print("Ficha editada com sucesso!")
-            salvar_fichas(fichas)
-            return
-    
-    print("Ficha não encontrada.")
+    if not fichas:
+        print("\nNenhuma ficha cadastrada para editar!")
+        input("Pressione Enter para voltar...")
+        return
+
+    while True:
+        print("\n" + "=" * 40)
+        print("EDITAR FICHA".center(40))
+        print("=" * 40)
+        
+        visualizar_fichas(fichas)
+        
+        nome_busca = input("\nDigite o nome da ficha para editar: ").strip().lower()
+        ficha_encontrada = None
+        
+        for ficha in fichas:
+            if ficha['nome'].lower() == nome_busca:
+                ficha_encontrada = ficha
+                break
+
+        if not ficha_encontrada:
+            print("Ficha não encontrada!")
+            if input("Deseja tentar novamente? (s/n): ").lower() != 's':
+                return
+            continue
+
+        print(f"\nEditando ficha: {ficha_encontrada['nome']}")
+        
+        novo_nome = input(f"Novo nome [{ficha_encontrada['nome']}]: ").strip().capitalize()
+        if novo_nome:
+            nome_existe = any(f['nome'].lower() == novo_nome.lower() and f['nome'].lower() != ficha_encontrada['nome'].lower() 
+                            for f in fichas)
+            if nome_existe:
+                print("Já existe outra ficha com este nome!")
+            else:
+                ficha_encontrada['nome'] = novo_nome
+
+        nova_categoria = input(f"Nova categoria [{ficha_encontrada['categoria']}]: ").strip().upper()
+        if nova_categoria:
+            ficha_encontrada['categoria'] = nova_categoria
+
+        if input("\nEditar ingredientes? (s/n): ").lower() == 's':
+            novos_ingredientes = []
+            print("\nNovos ingredientes:")
+            while True:
+                ingred = input("Ingrediente (deixe em branco para parar): ").strip().capitalize()
+                if not ingred:
+                    if not novos_ingredientes:
+                        print("Erro: A ficha precisa ter pelo menos 1 ingrediente!")
+                        continue
+                    break
+                    
+                quant = input("Quantidade: ").strip()
+                while not quant:
+                    print("Quantidade não pode ser vazia!")
+                    quant = input("Quantidade: ").strip()
+                    
+                novos_ingredientes.append({'ingrediente': ingred, 'quantidade': quant})
+            
+            ficha_encontrada['ingredientes'] = novos_ingredientes
+
+        if input("\nEditar modo de preparo? (s/n): ").lower() == 's':
+            novo_preparo = []
+            print("\nNovo modo de preparo:")
+            passo_num = 1
+            while True:
+                descricao = input(f"Passo {passo_num} (deixe em branco para parar): ").strip().capitalize()
+                if not descricao:
+                    if not novo_preparo:
+                        print("Adicione pelo menos 1 passo!")
+                        continue
+                    break
+                    
+                novo_preparo.append({'passo': passo_num, 'descricao': descricao})
+                passo_num += 1
+            
+            ficha_encontrada['preparo'] = novo_preparo
+
+        salvar_fichas(fichas)
+        print("\nFicha atualizada com sucesso!")
+
+        if input("\nEditar outra ficha? (s/n): ").lower() != 's':
+            break
 
 def excluir_fichas(fichas):
     nome = input("Digite o nome da ficha que deseja excluir: ").strip().lower()
