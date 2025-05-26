@@ -114,7 +114,7 @@ def visualizar_fichas(fichas):
                 print(f"{passo['passo']}. {passo['descricao']}")
                 print("-" * 90)
         
-        input("\nPressione Enter para voltar...")
+    input("\nPressione Enter para voltar...")
 
 def editar_fichas(fichas):
     if not fichas:

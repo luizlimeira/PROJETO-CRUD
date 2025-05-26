@@ -1,4 +1,3 @@
-from cardapio import *
 from ficha import *
 
 def menu_cardapio():
