@@ -202,18 +202,49 @@ def editar_fichas(fichas):
             break
 
 def excluir_fichas(fichas):
-    nome = input("Digite o nome da ficha que deseja excluir: ").strip().lower()
-    
-    for ficha in fichas:
-        if ficha['nome'].lower() == nome:
-            print(f"\nFicha encontrada: {ficha['nome']}")
-            if input("Tem certeza que deseja excluir? (s/n): ").lower() == 's':
-                fichas.remove(ficha)
-                print("Ficha excluída com sucesso.")
+    if not fichas:
+        print("\nNenhuma ficha cadastrada para excluir!")
+        input("Pressione Enter para voltar...")
+        return
+
+    while True:
+        print("\n" + "=" * 40)
+        print("EXCLUIR FICHA".center(40))
+        print("=" * 40)
+        
+        visualizar_fichas(fichas)
+        
+        nome_busca = input("\nDigite o nome da ficha para excluir: ").strip().lower()
+        ficha_encontrada = None
+        
+        for ficha in fichas:
+            if ficha['nome'].lower() == nome_busca:
+                ficha_encontrada = ficha
+                break
+
+        if not ficha_encontrada:
+            print("Ficha não encontrada!")
+            if input("Deseja tentar novamente? (s/n): ").lower() != 's':
+                return
+            continue
+
+        print("\nCONFIRMAR EXCLUSÃO")
+        print(f"Nome: {ficha_encontrada['nome']}")
+        print(f"Categoria: {ficha_encontrada['categoria']}")
+        print("\nIngredientes:")
+        for ingred in ficha_encontrada['ingredientes']:
+            print(f"- {ingred['quantidade']} de {ingred['ingrediente']}")
+        
+        confirmacao = input("\nTem certeza que deseja excluir? (s/n):").lower()
+        if confirmacao == 's':
+            fichas.remove(ficha_encontrada)
             salvar_fichas(fichas)
-            return
-    
-    print("Ficha não encontrada.")
+            print("\n\033[Ficha excluída com sucesso!")
+        else:
+            print("\nExclusão cancelada.")
+
+        if input("\nExcluir outra ficha? (s/n): ").lower() != 's':
+            break
 
 def menu_fichas():
     while True:
