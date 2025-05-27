@@ -132,6 +132,26 @@
             {
                 "passo": 5,
                 "descricao": "Acomode os fil\u00e9s em um refrat\u00e1rio regado com um pouco de molho."
+            },
+            {
+                "passo": 6,
+                "descricao": "Coloque fatias de mussarela sobre os fil\u00e9s."
+            },
+            {
+                "passo": 7,
+                "descricao": "Regue com o molho."
+            },
+            {
+                "passo": 8,
+                "descricao": "Polvilhe o queijo parmes\u00e3o ralado."
+            },
+            {
+                "passo": 9,
+                "descricao": "Leve ao forno pr\u00e9-aquecido para derreter a mussarela."
+            },
+            {
+                "passo": 10,
+                "descricao": "Sirva com arroz, pur\u00ea e um pouco de salada."
             }
         ]
     },

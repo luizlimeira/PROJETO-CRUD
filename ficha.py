@@ -271,7 +271,7 @@ def menu_fichas():
         opcao = input("Escolha uma opção: ")
         
         if opcao == "1":
-            fichas = adicionar_ficha(fichas)
+            adicionar_ficha(fichas)
         elif opcao == "2":
             visualizar_fichas(fichas)
         elif opcao == "3":
