@@ -301,15 +301,15 @@
         "ingredientes": [
             {
                 "ingrediente": "Sorvete de creme",
-                "quantidade": "2 bolas"
+                "quantidade": "1 bola"
             },
             {
-                "ingrediente": "Leite\\",
+                "ingrediente": "Leite",
                 "quantidade": "300ml"
             },
             {
                 "ingrediente": "Chocolate maltado",
-                "quantidade": "3 colheres de sopa"
+                "quantidade": "2 colheres de sopa"
             }
         ],
         "preparo": [

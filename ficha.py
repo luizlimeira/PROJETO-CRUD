@@ -219,11 +219,11 @@ def excluir_fichas(fichas):
     while True:
         print("\n" + "=" * 40)
         print("EXCLUIR FICHA".center(40))
-        print("=" * 40)       
+        print("=" * 40)
         
         nome_busca = input("\nDigite o nome da ficha para excluir: ").strip().lower()
         ficha_encontrada = None
-        
+
         for ficha in fichas:
             if ficha['nome'].lower() == nome_busca:
                 ficha_encontrada = ficha
@@ -235,22 +235,26 @@ def excluir_fichas(fichas):
                 return
             continue
 
-        print("\nCONFIRMAR EXCLUSÃO")
+        print("\nFicha encontrada:")
         print(f"Nome: {ficha_encontrada['nome']}")
         print(f"Categoria: {ficha_encontrada['categoria']}")
         print("\nIngredientes:")
         for ingred in ficha_encontrada['ingredientes']:
             print(f"- {ingred['quantidade']} de {ingred['ingrediente']}")
-        
-        confirmacao = input("\nTem certeza que deseja excluir? (s/n):").lower()
-        if confirmacao == 's':
+        print("\nModo de Preparo:")
+        for passo in ficha_encontrada['preparo']:
+            print(f"{passo['passo']}. {passo['descricao']}")
+        print("-" * 40)
+
+        confirmar = input(f"Tem certeza que deseja excluir a ficha '{ficha_encontrada['nome']}'? (s/n): ").lower()
+        if confirmar == 's':
             fichas.remove(ficha_encontrada)
             salvar_fichas(fichas)
-            print("\nFicha excluída com sucesso!")
+            print("Ficha excluída com sucesso!")
         else:
-            print("\nExclusão cancelada.")
+            print("Exclusão cancelada.")
 
-        if input("\nExcluir outra ficha? (s/n): ").lower() != 's':
+        if input("\nDeseja excluir outra ficha? (s/n): ").lower() != 's':
             break
 
 def menu_fichas():
