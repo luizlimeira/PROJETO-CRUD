@@ -102,5 +102,21 @@
         "ingredientes": "massa, carne, molho branco, queijo",
         "preco": 25.9,
         "categoria": "prato principal"
+    },
+    {
+        "id": 14,
+        "nome": "xxxxxxxxxxxxxxxx",
+        "descricao": "xxccvvesss",
+        "ingredientes": "x,x,x,x,x,x,x,x,x,x",
+        "preco": 50.0,
+        "categoria": "entrada"
+    },
+    {
+        "id": 15,
+        "nome": "hshyhygygtrtre",
+        "descricao": "erehh",
+        "ingredientes": "d,j,j,j",
+        "preco": 10.0,
+        "categoria": "sobremesa"
     }
 ]

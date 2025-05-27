@@ -79,35 +79,53 @@ def filtrar_por_categoria():
 
 
 def atualizar_item():
-    try:
-        cardapio = carregar_cardapio()
-        id_item = int(input("Informe o ID do item que deseja atualizar: "))
-        for item in cardapio:
-            if item['id'] == id_item:
-                nome = input(f"Novo nome ({item['nome']}): ").strip() or item['nome']
-                descricao = input(f"Nova descrição ({item['descricao']}): ").strip() or item['descricao']
-                ingredientes = input(f"Novo ingrediente ({item['ingredientes']}): ").strip() or item['ingredientes']
-                preco_input = input(f"Novo preço ({item['preco']}): ").replace(',', '.').strip()
-                preco = float(preco_input) if preco_input else item['preco']
-                categoria = input(f"Nova categoria ({item['categoria']}): ").strip().lower() or item['categoria']
+    cardapio = carregar_cardapio()
+    while True:
+        try:
+            id_item = int(input("\nInforme o ID do item que deseja atualizar: ").strip())
+            id_encontrado=False
+            for item in cardapio:
+                if item['id'] == id_item:
+                    id_encontrado=True
 
-                item.update({
-                    'nome': nome,
-                    'descricao': descricao,
-                    'ingredientes': ingredientes,
-                    'preco': preco,
-                    'categoria': categoria
-                })
-                salvar_cardapio(cardapio)
-                print("Item atualizado com sucesso!")
-                return
-        print("Item não encontrado.")
-    except ValueError:
-        print("Erro: ID ou preço inválido.")
-    except Exception as e:
-        print(f"Erro inesperado: {e}")
+                    nome = input(f"Novo nome ({item['nome']}): ").strip() or item['nome']
+                    
+                    descricao = input(f"Nova descrição ({item['descricao']}): ").strip() or item['descricao']
 
+                    ingredientes = input(f"Novo ingrediente ({item['ingredientes']}): ").strip() or item['ingredientes']
 
+                    preco_input = input(f"Novo preço ({item['preco']}): ").replace(',', '.').strip()
+                    preco = float(preco_input) if preco_input else item['preco']
+
+                    if preco <=0:
+                        print("\nErro: O preço deve ser positivo.")
+                        break
+                    
+                    categoria = input(f"Nova categoria ({item['categoria']}): ").strip().lower() or item['categoria']
+
+                    
+                    item.update({
+                        'nome': nome,
+                        'descricao': descricao,
+                        'ingredientes': ingredientes,
+                        'preco': preco,
+                        'categoria': categoria
+                    })
+                    salvar_cardapio(cardapio)
+                    print("\nItem atualizado com sucesso!")
+                    break
+            if id_encontrado==False:
+                print("\nID não encontrado! Tente novamente!")
+
+            continuar=input("\nDeseja continuar a atualização do cardápio?(s/n)").strip().lower()
+            if continuar!='s':
+                break     
+        except ValueError:
+            print("Erro: ID ou preço inválido. Tente novamente!")
+        except Exception as e:
+            print(f"Erro inesperado: {e}")
+
+#FALTA AJUSTAR O DELETE!!
 def remover_item():
     try:
         cardapio = carregar_cardapio()

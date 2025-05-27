@@ -1,4 +1,5 @@
 from cardapio import *
+
 # from ficha import *
 
 # def menu_pedido():
@@ -51,6 +52,7 @@ from cardapio import *
 #             return
 #         else:
 #             print("\nOpção inválida!")
+
 
 def menu_cardapio():
     while True:
