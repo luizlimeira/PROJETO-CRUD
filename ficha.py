@@ -127,8 +127,6 @@ def editar_fichas(fichas):
         print("EDITAR FICHA".center(40))
         print("=" * 40)
         
-        visualizar_fichas(fichas)
-        
         nome_busca = input("\nDigite o nome da ficha para editar: ").strip().lower()
         ficha_encontrada = None
         
@@ -143,7 +141,18 @@ def editar_fichas(fichas):
                 return
             continue
 
-        print(f"\nEditando ficha: {ficha_encontrada['nome']}")
+        print("\nFicha encontrada:")
+        print(f"Nome: {ficha_encontrada['nome']}")
+        print(f"Categoria: {ficha_encontrada['categoria']}")
+        print("\nIngredientes:")
+        for ingred in ficha_encontrada['ingredientes']:
+            print(f"- {ingred['quantidade']} de {ingred['ingrediente']}")
+        print("\nModo de Preparo:")
+        for passo in ficha_encontrada['preparo']:
+            print(f"{passo['passo']}. {passo['descricao']}")
+        print("-" * 40)
+
+        print(f"\nEditando ficha: {ficha_encontrada['nome']} (deixe em branco para manter o nome ou categoria atual)")
         
         novo_nome = input(f"Novo nome [{ficha_encontrada['nome']}]: ").strip().capitalize()
         if novo_nome:
@@ -210,9 +219,7 @@ def excluir_fichas(fichas):
     while True:
         print("\n" + "=" * 40)
         print("EXCLUIR FICHA".center(40))
-        print("=" * 40)
-        
-        visualizar_fichas(fichas)
+        print("=" * 40)       
         
         nome_busca = input("\nDigite o nome da ficha para excluir: ").strip().lower()
         ficha_encontrada = None
@@ -239,7 +246,7 @@ def excluir_fichas(fichas):
         if confirmacao == 's':
             fichas.remove(ficha_encontrada)
             salvar_fichas(fichas)
-            print("\n\033[Ficha excluída com sucesso!")
+            print("\nFicha excluída com sucesso!")
         else:
             print("\nExclusão cancelada.")
 
@@ -272,5 +279,5 @@ def menu_fichas():
         else:
             print("\nOpção inválida!")
 
-if __name__ == "__ficha__":
+if __name__ == "__main__":
     menu_fichas()

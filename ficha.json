@@ -294,5 +294,33 @@
                 "descricao": "Deixe esfriar e desenforme"
             }
         ]
+    },
+    {
+        "categoria": "BEBIDAS",
+        "nome": "Maltado",
+        "ingredientes": [
+            {
+                "ingrediente": "Sorvete de creme",
+                "quantidade": "2 bolas"
+            },
+            {
+                "ingrediente": "Leite\\",
+                "quantidade": "300ml"
+            },
+            {
+                "ingrediente": "Chocolate maltado",
+                "quantidade": "3 colheres de sopa"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Coloque todos os ingredientes no liquidificador"
+            },
+            {
+                "passo": 2,
+                "descricao": "Bata bem"
+            }
+        ]
     }
 ]
