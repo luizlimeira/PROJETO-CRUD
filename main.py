@@ -99,7 +99,7 @@ def main():
             menu_fichas()
 
         elif opcao == "0":
-            print("Saindo do sistema.")
+            print("Saindo do sistema...")
             break
         
         else:

@@ -1,0 +1,72 @@
+{
+        "id": 4,
+        "nome": "Filé com Fritas",
+        "descricao": "300g de Cubos de filé, refogado com cebola roxa e molho barbecue. Acompanha batata frita.",
+        "ingredientes": "Carne Bovina, Glúten, Batata, Molho.",
+        "preco": 45.0,
+        "categoria": "entrada"
+    },
+    {
+        "id": 5,
+        "nome": "Caldinho de Feijão",
+        "descricao": "Caldo de feijão preto refogado com azeite e pimenta de cheiro, com ovo de codorna, azeitona, charque e torresmo.",
+        "ingredientes": "Feijão, Ovo, Carne bovina, Gordura de Porco.",
+        "preco": 15.0,
+        "categoria": "entrada"
+    },
+    {
+        "id": 6,
+        "nome": "Pastel de Queijo",
+        "descricao": "Massa fresca recheada com queijo coalho e muçarela.",
+        "ingredientes": "Massa, Queijo.",
+        "preco": 20.0,
+        "categoria": "entrada"
+    },
+    {
+        "id": 7,
+        "nome": "Pudim de Leite",
+        "descricao": "Doce caseiro com ameixas pretas em calda.",
+        "ingredientes": "Ovo, Leite.",
+        "preco": 25.0,
+        "categoria": "sobremesa"
+    },
+    {
+        "id": 8,
+        "nome": "Torta Pavê de Chocolate",
+        "descricao": "Fatia de torta com deliciosas camadas de pão de ló de chocolate trufado e creme de chocolate. Coberta com trufa cremosa e bolinhas de chocolate crocante.",
+        "ingredientes": "Ovo, Chocolate, Leite.",
+        "preco": 19.9,
+        "categoria": "sobremesa"
+    },
+    {
+        "id": 9,
+        "nome": "Água Mineral",
+        "descricao": "Água para beber",
+        "ingredientes": "Água",
+        "preco": 7.5,
+        "categoria": "bebida"
+    },
+    {
+        "id": 10,
+        "nome": "Refrigerante (coca-cola, fanta, guaraná)",
+        "descricao": "Bebida gaseificada",
+        "ingredientes": "Água, gás, corante.",
+        "preco": 9.5,
+        "categoria": "bebida"
+    },
+    {
+        "id": 11,
+        "nome": "Café Expresso",
+        "descricao": "Delicioso café feito com torra nobre.",
+        "ingredientes": "Café",
+        "preco": 7.9,
+        "categoria": "bebida"
+    },
+    {
+        "id": 12,
+        "nome": "camarão vila franca",
+        "descricao": "camarão cinza GG na abóbora com arroz piamontese",
+        "ingredientes": "arroz, abóbora, camarão GG, creme cheese, cebola,salsa, creme de leite fresco",
+        "preco": 109.9,
+        "categoria": "prato principal"
+    }
