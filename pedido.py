@@ -23,6 +23,50 @@ precos = {
     'id10': 9.5,
     'id11': 7.9,
 }
+
+cardapio = [
+    "1.Filé à parmegiana--> 60,0",
+    "2.Peixe crocante --> 70,0",
+    "3.Carne de sol do Maranhão --> 89,9",
+    "4.Filé com fritas ---> 45,0",
+    "5.Caldinho de feijão ---> 15,0",
+    "6.Pastel de queijo ---> 20,0",
+    "7.Pudim de Leite ---> 25,0",
+    "8.Torta pavê de chocolate ---> 17,0",
+    "9.Água mineral ---> 9,5",
+    "10.Refrigerante(coca-cola, fanta, guaraná) ---> 9,5",
+    "11.Café expresso ---> 7,9"
+]
+
+for item in cardapio:
+    print(item)
+
+print("____________________________________________________________________________________________________________________________\n")
+print("Obs: digite 'id' antes de escolher seu número (ex: id1)")
+print("Obs: caso deseje cancelar a operação digite 'sair'...")
+
+qnt_total = 0
+valor_total = 0.0
+pedidos_cliente = []
+
+
+while True:
+    pedido = input("Qual item você deseja pedir?: ")
+
+    if pedido == 'sair':
+        print("\nPedido finalizado.")
+        print(f"Total de itens pedidos: {len(pedidos_cliente)}")
+        print(f"Valor total: R$ {valor_total:.2f}")
+        break
+    elif pedido in precos:
+        print(f"{pedido.upper()} adicionado ao pedido! Valor: R$ {precos[pedido]:.2f}")
+        pedidos_cliente.append(pedido)
+        valor_total += precos[pedido]
+    else:
+        print("Erro! Digite um ID válido.")
+
+
+
 arquivo_pedidos = "pedido.json"
 
 if os.path.exists(arquivo_pedidos):
