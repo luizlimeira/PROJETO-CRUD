@@ -33,7 +33,6 @@ def adicionar_item():
             if iniciar_insercao != 's':
                 print("\nVoltando para o menu cardápio...")
                 break
-            #Capturando os dados do novo item
             novo_item = {
                 'id': len(cardapio) + 1,
                 'nome': input("Nome do prato/bebida: ").strip(),
@@ -43,7 +42,6 @@ def adicionar_item():
                 'categoria': input("Categoria (entrada, prato principal, sobremesa, bebida): ").strip().lower()
             }
             
-            # Verificar se já existe um item com determinados campos iguais no json
             if any(item['nome'].lower() == novo_item['nome'].lower() for item in cardapio):
                 print(f"\nJá existe um item com o nome '{'nome'}' no cardápio.")
                 continue
@@ -51,7 +49,6 @@ def adicionar_item():
                 print(f"\nJá existe um item com a mesma  '{'descricao'}' no cardápio.")
                 continue
 
-            # Verificar se todos os campos obrigatórios estão preenchidos
             elif not novo_item['nome'] or not novo_item['descricao'] or not novo_item['ingredientes'] or novo_item['preco'] <= 0 or not novo_item['categoria']:
                 print("\nErro: todos os campos são obrigatórios e o preço deve ser positivo.")
                 continue
@@ -178,3 +175,32 @@ def remover_item():
             print("\nErro: ID inválido.")
         except Exception as e:
             print(f"\nErro inesperado: {e}")
+
+def menu_cardapio():
+    while True:
+        print("\n--- CARDÁPIO ---")
+        print("1. Listar")
+        print("2. Adicionar")
+        print("3. Atualizar")
+        print("4. Remover")
+        print("5. Filtrar")
+        print("0. Voltar")
+        op = input("Escolha: ")
+
+        if op == "1":
+            listar_cardapio()
+        elif op == "2":
+            adicionar_item()
+        elif op == "3":
+            atualizar_item()
+        elif op == "4":
+            remover_item()
+        elif op == "5":
+            filtrar_por_categoria()
+        elif op == "0":
+            break    
+        else:
+            print("Opção inválida.")
+
+if __name__ == "__main__":
+    menu_cardapio()
