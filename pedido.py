@@ -65,7 +65,41 @@ while True:
     else:
         print("Erro! Digite um ID válido.")
 
+print("\nSeu pedido atual:")
+for i, item in enumerate(pedidos_cliente, 1):
+    print(f"{i}. {item} - R$ {precos[item]:.2f}")
 
+
+while True:
+    mudar_pedido = input("\nDeseja ATUALIZAR algum pedido (digite 'update'), REMOVER (digite 'delete') ou SALVAR e sair (digite 'salvar')? ").lower()
+
+    if mudar_pedido == 'update':
+        indice = int(input("Digite o número do item que deseja atualizar (ex: 1, 2, 3...): ")) - 1
+        if 0 <= indice < len(pedidos_cliente):
+            novo_id = input("Digite o novo ID do item: ")
+            if novo_id in precos:
+                valor_total -= precos[pedidos_cliente[indice]]
+                pedidos_cliente[indice] = novo_id
+                valor_total += precos[novo_id]
+                print("Item atualizado com sucesso!")
+            else:
+                print("ID inválido!")
+        else:
+            print("Número inválido!")
+
+    elif mudar_pedido == 'delete':
+        indice = int(input("Digite o número do item que deseja remover (ex: 1, 2, 3...): ")) - 1
+        if 0 <= indice < len(pedidos_cliente):
+            valor_total -= precos[pedidos_cliente[indice]]
+            pedidos_cliente.pop(indice)
+            print("Item removido com sucesso!")
+        else:
+            print("Número inválido!")
+
+    elif mudar_pedido == 'salvar':
+        break
+    else:
+        print("Comando inválido. Use 'update', 'delete' ou 'salvar'.")
 
 arquivo_pedidos = "pedido.json"
 
