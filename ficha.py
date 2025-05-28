@@ -126,44 +126,40 @@ def editar_fichas(fichas):
         print("\n" + "=" * 40)
         print("EDITAR FICHA".center(40))
         print("=" * 40)
-        
-        nome_busca = input("\nDigite o nome da ficha para editar: ").strip().lower()
-        ficha_encontrada = None
-        
-        for ficha in fichas:
-            if ficha['nome'].lower() == nome_busca:
-                ficha_encontrada = ficha
-                break
 
-        if not ficha_encontrada:
-            print("Ficha não encontrada!")
-            if input("Deseja tentar novamente? (s/n): ").lower() != 's':
-                return
+        for i, ficha in enumerate(fichas, 1):
+            print(f"{i}. {ficha['nome']} ({ficha['categoria']})")
+
+        try:
+            escolha = int(input("\nDigite o número da ficha que deseja editar: "))
+            if escolha < 1 or escolha > len(fichas):
+                print("Opção inválida!")
+                continue
+        except ValueError:
+            print("Entrada inválida!")
             continue
 
-        print("\nFicha encontrada:")
-        print(f"Nome: {ficha_encontrada['nome']}")
+        ficha_encontrada = fichas[escolha - 1]
+
+        print(f"\nEditando ficha: {ficha_encontrada['nome']}")
         print(f"Categoria: {ficha_encontrada['categoria']}")
         print("\nIngredientes:")
-        for ingred in ficha_encontrada['ingredientes']:
-            print(f"- {ingred['quantidade']} de {ingred['ingrediente']}")
+        for i in ficha_encontrada['ingredientes']:
+            print(f"- {i['quantidade']} de {i['ingrediente']}")
         print("\nModo de Preparo:")
-        for passo in ficha_encontrada['preparo']:
-            print(f"{passo['passo']}. {passo['descricao']}")
+        for p in ficha_encontrada['preparo']:
+            print(f"{p['passo']}. {p['descricao']}")
         print("-" * 40)
 
-        print(f"\nEditando ficha: {ficha_encontrada['nome']} (deixe em branco para manter o nome ou categoria atual)")
-        
-        novo_nome = input(f"Novo nome [{ficha_encontrada['nome']}]: ").strip().capitalize()
+        novo_nome = input(f"Novo nome (deixe em branco para manter o atual) [{ficha_encontrada['nome']}]: ").strip().capitalize()
         if novo_nome:
-            nome_existe = any(f['nome'].lower() == novo_nome.lower() and f['nome'].lower() != ficha_encontrada['nome'].lower() 
-                            for f in fichas)
+            nome_existe = any(f['nome'].lower() == novo_nome.lower() and f != ficha_encontrada for f in fichas)
             if nome_existe:
                 print("Já existe outra ficha com este nome!")
             else:
                 ficha_encontrada['nome'] = novo_nome
 
-        nova_categoria = input(f"Nova categoria [{ficha_encontrada['categoria']}]: ").strip().upper()
+        nova_categoria = input(f"Nova categoria (deixe em branco para manter a atual) [{ficha_encontrada['categoria']}]: ").strip().upper()
         if nova_categoria:
             ficha_encontrada['categoria'] = nova_categoria
 
@@ -177,14 +173,12 @@ def editar_fichas(fichas):
                         print("Erro: A ficha precisa ter pelo menos 1 ingrediente!")
                         continue
                     break
-                    
                 quant = input("Quantidade: ").strip()
                 while not quant:
                     print("Quantidade não pode ser vazia!")
                     quant = input("Quantidade: ").strip()
-                    
                 novos_ingredientes.append({'ingrediente': ingred, 'quantidade': quant})
-            
+
             ficha_encontrada['ingredientes'] = novos_ingredientes
 
         if input("\nEditar modo de preparo? (s/n): ").lower() == 's':
@@ -198,10 +192,9 @@ def editar_fichas(fichas):
                         print("Adicione pelo menos 1 passo!")
                         continue
                     break
-                    
                 novo_preparo.append({'passo': passo_num, 'descricao': descricao})
                 passo_num += 1
-            
+
             ficha_encontrada['preparo'] = novo_preparo
 
         salvar_fichas(fichas)
@@ -220,30 +213,30 @@ def excluir_fichas(fichas):
         print("\n" + "=" * 40)
         print("EXCLUIR FICHA".center(40))
         print("=" * 40)
-        
-        nome_busca = input("\nDigite o nome da ficha para excluir: ").strip().lower()
-        ficha_encontrada = None
 
-        for ficha in fichas:
-            if ficha['nome'].lower() == nome_busca:
-                ficha_encontrada = ficha
-                break
+        for i, ficha in enumerate(fichas, 1):
+            print(f"{i}. {ficha['nome']} ({ficha['categoria']})")
 
-        if not ficha_encontrada:
-            print("Ficha não encontrada!")
-            if input("Deseja tentar novamente? (s/n): ").lower() != 's':
-                return
+        try:
+            escolha = int(input("\nDigite o número da ficha que deseja excluir: "))
+            if escolha < 1 or escolha > len(fichas):
+                print("Opção inválida!")
+                continue
+        except ValueError:
+            print("Entrada inválida!")
             continue
+
+        ficha_encontrada = fichas[escolha - 1]
 
         print("\nFicha encontrada:")
         print(f"Nome: {ficha_encontrada['nome']}")
         print(f"Categoria: {ficha_encontrada['categoria']}")
         print("\nIngredientes:")
-        for ingred in ficha_encontrada['ingredientes']:
-            print(f"- {ingred['quantidade']} de {ingred['ingrediente']}")
+        for i in ficha_encontrada['ingredientes']:
+            print(f"- {i['quantidade']} de {i['ingrediente']}")
         print("\nModo de Preparo:")
-        for passo in ficha_encontrada['preparo']:
-            print(f"{passo['passo']}. {passo['descricao']}")
+        for p in ficha_encontrada['preparo']:
+            print(f"{p['passo']}. {p['descricao']}")
         print("-" * 40)
 
         confirmar = input(f"Tem certeza que deseja excluir a ficha '{ficha_encontrada['nome']}'? (s/n): ").lower()
