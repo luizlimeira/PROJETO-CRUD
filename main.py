@@ -1,5 +1,5 @@
-from cardapio import *
 from ficha import *
+from cardapio import *
 
 def menu_fichas():
     while True:
@@ -58,8 +58,7 @@ def main():
     while True:
         print("\n==== SISTEMA DO RESTAURANTE ====")
         print("1. Gerenciar Cardápio")
-        print("2. Gerenciar Pedidos")
-        print("3. Gerenciar Fichas Técnicas")
+        print("2. Gerenciar Fichas Técnicas")
         print("0. Sair")
         opcao = input("Escolha uma opção: ")
 
@@ -67,9 +66,6 @@ def main():
             menu_cardapio()
 
         elif opcao == "2":
-            menu_pedidos()
-
-        elif opcao == "3":
             menu_fichas()
 
         elif opcao == "0":

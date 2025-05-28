@@ -1,0 +1,346 @@
+[
+    {
+        "categoria": "BEBIDAS",
+        "nome": "Cappuccino",
+        "ingredientes": [
+            {
+                "ingrediente": "Espresso",
+                "quantidade": "1"
+            },
+            {
+                "ingrediente": "Leite",
+                "quantidade": "150ml"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Extraia o espresso"
+            },
+            {
+                "passo": 2,
+                "descricao": "Vaporize o leite"
+            },
+            {
+                "passo": 3,
+                "descricao": "Fa\u00e7a o latte art"
+            },
+            {
+                "passo": 4,
+                "descricao": "Sirva"
+            }
+        ]
+    },
+    {
+        "categoria": "BEBIDAS",
+        "nome": "Orange coffee",
+        "ingredientes": [
+            {
+                "ingrediente": "Suco de laranja",
+                "quantidade": "200ml"
+            },
+            {
+                "ingrediente": "Gelo",
+                "quantidade": "1 p\u00e1"
+            },
+            {
+                "ingrediente": "Cold brew",
+                "quantidade": "80ml"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Adicione o gelo no copo de 400ml"
+            },
+            {
+                "passo": 2,
+                "descricao": "Adicone o suco de laranja"
+            },
+            {
+                "passo": 3,
+                "descricao": "Adicione o cold brew de cima, com fluxo fino"
+            }
+        ]
+    },
+    {
+        "categoria": "COMIDA",
+        "nome": "Fil\u00e9 a parmegiana",
+        "ingredientes": [
+            {
+                "ingrediente": "Alcatra ou contra fil\u00e9 em bifes",
+                "quantidade": "500 g"
+            },
+            {
+                "ingrediente": "Or\u00e9gano",
+                "quantidade": "a gosto"
+            },
+            {
+                "ingrediente": "Vinagre",
+                "quantidade": "a gosto"
+            },
+            {
+                "ingrediente": "Farinha de rosca",
+                "quantidade": "o suficiente"
+            },
+            {
+                "ingrediente": "Alho",
+                "quantidade": "2 dentes"
+            },
+            {
+                "ingrediente": "Sal",
+                "quantidade": "a gosto"
+            },
+            {
+                "ingrediente": "Ovos",
+                "quantidade": "2"
+            },
+            {
+                "ingrediente": "Molho de tomate",
+                "quantidade": "1/2 litro"
+            },
+            {
+                "ingrediente": "Queijo mussarela",
+                "quantidade": "250g"
+            },
+            {
+                "ingrediente": "Queijo parmesao",
+                "quantidade": "para povilhar"
+            },
+            {
+                "ingrediente": "Pimenta do reino",
+                "quantidade": "a gosto"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Tempere os fil\u00e9s com o alho, or\u00e9gano, sal, pimenta e vinagre."
+            },
+            {
+                "passo": 2,
+                "descricao": "Passe pela farinha de rosca, nos ovos batidos e novamente pela farinha de rosca."
+            },
+            {
+                "passo": 3,
+                "descricao": "Frite em \u00f3leo quente."
+            },
+            {
+                "passo": 4,
+                "descricao": "Escorra sobre papel absorvente."
+            },
+            {
+                "passo": 5,
+                "descricao": "Acomode os fil\u00e9s em um refrat\u00e1rio regado com um pouco de molho."
+            },
+            {
+                "passo": 6,
+                "descricao": "Coloque fatias de mussarela sobre os fil\u00e9s."
+            },
+            {
+                "passo": 7,
+                "descricao": "Regue com o molho."
+            },
+            {
+                "passo": 8,
+                "descricao": "Polvilhe o queijo parmes\u00e3o ralado."
+            },
+            {
+                "passo": 9,
+                "descricao": "Leve ao forno pr\u00e9-aquecido para derreter a mussarela."
+            },
+            {
+                "passo": 10,
+                "descricao": "Sirva com arroz, pur\u00ea e um pouco de salada."
+            }
+        ]
+    },
+    {
+        "categoria": "COMIDA",
+        "nome": "Risoto de cogumelo",
+        "ingredientes": [
+            {
+                "ingrediente": "Arroz arb\u00f3reo",
+                "quantidade": "2 xicaras"
+            },
+            {
+                "ingrediente": "Cogumelo da sua preferencia",
+                "quantidade": "1 bandeja"
+            },
+            {
+                "ingrediente": "Cebola",
+                "quantidade": "1"
+            },
+            {
+                "ingrediente": "Salsao",
+                "quantidade": "2 talos"
+            },
+            {
+                "ingrediente": "Alho",
+                "quantidade": "2 dentes"
+            },
+            {
+                "ingrediente": "Azeite",
+                "quantidade": "3 colheres"
+            },
+            {
+                "ingrediente": "Vinho branco",
+                "quantidade": "1 copo"
+            },
+            {
+                "ingrediente": "Tomate",
+                "quantidade": "1"
+            },
+            {
+                "ingrediente": "Pimenta do reino",
+                "quantidade": "a gosto"
+            },
+            {
+                "ingrediente": "Sal",
+                "quantidade": "a gosto"
+            },
+            {
+                "ingrediente": "Queijo parmesao",
+                "quantidade": "70g"
+            },
+            {
+                "ingrediente": "Creme de leite fresco",
+                "quantidade": "3 colheres"
+            },
+            {
+                "ingrediente": "Caldo de legume",
+                "quantidade": "3 x\u00edcaras"
+            },
+            {
+                "ingrediente": "Salsinha e cebolinha picadas",
+                "quantidade": "a gosto"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Esquente o azeite e refogue com alho e cebola"
+            },
+            {
+                "passo": 2,
+                "descricao": "Adicone os cogumelos"
+            },
+            {
+                "passo": 3,
+                "descricao": "Adicione o vinho, tomate, salsao, meio copo de caldo de legumes"
+            },
+            {
+                "passo": 4,
+                "descricao": "Deixe cozinhar ate os cogumelos ficarem macios"
+            },
+            {
+                "passo": 5,
+                "descricao": "Adicione o arroz e o restante de caldo de legumes"
+            },
+            {
+                "passo": 6,
+                "descricao": "Adicone o resto do vinho"
+            },
+            {
+                "passo": 7,
+                "descricao": "Adicione a pimenta e o sal a gosto e mexa constantemente"
+            },
+            {
+                "passo": 8,
+                "descricao": "Adicione o creme de leite e manteiga, mexendo ainda mais"
+            },
+            {
+                "passo": 9,
+                "descricao": "Adicione o queijo parmesao"
+            },
+            {
+                "passo": 10,
+                "descricao": "Sirva com salsinha e cebolinha picada"
+            }
+        ]
+    },
+    {
+        "categoria": "SOBREMESA",
+        "nome": "Pudim",
+        "ingredientes": [
+            {
+                "ingrediente": "Ovos",
+                "quantidade": "3"
+            },
+            {
+                "ingrediente": "Leite condensado",
+                "quantidade": "1 lata"
+            },
+            {
+                "ingrediente": "Leite",
+                "quantidade": "1 xicara"
+            },
+            {
+                "ingrediente": "A\u00e7ucar",
+                "quantidade": "1 xicara"
+            },
+            {
+                "ingrediente": "Agua",
+                "quantidade": "1/2 xicara"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Bate bem os ovos no liquidificador"
+            },
+            {
+                "passo": 2,
+                "descricao": "Acrescente o leite condensado e o leite e bata novamente"
+            },
+            {
+                "passo": 3,
+                "descricao": "Derreta o a\u00e7ucar na panela at\u00e9 ficar moreno e acrescente a agua at\u00e9 engrossar"
+            },
+            {
+                "passo": 4,
+                "descricao": "Coloque em uma forma redonda e despeje a massa do pudim por cima"
+            },
+            {
+                "passo": 5,
+                "descricao": "Asse em forno medio por 45 minutos, com a assadeira redonda dentro de uma maior com \u00e1gua"
+            },
+            {
+                "passo": 6,
+                "descricao": "Espete um garfo para ver se est\u00e1 bem assado"
+            },
+            {
+                "passo": 7,
+                "descricao": "Deixe esfriar e desenforme"
+            }
+        ]
+    },
+    {
+        "categoria": "BEBIDAS",
+        "nome": "Maltado",
+        "ingredientes": [
+            {
+                "ingrediente": "Sorvete de creme",
+                "quantidade": "1 bola"
+            },
+            {
+                "ingrediente": "Leite",
+                "quantidade": "300ml"
+            },
+            {
+                "ingrediente": "Chocolate maltado",
+                "quantidade": "2 colheres de sopa"
+            }
+        ],
+        "preparo": [
+            {
+                "passo": 1,
+                "descricao": "Coloque todos os ingredientes no liquidificador"
+            },
+            {
+                "passo": 2,
+                "descricao": "Bata bem"
+            }
+        ]
+    }
+]
