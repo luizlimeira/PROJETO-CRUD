@@ -15,7 +15,7 @@ def carregar_fichas():
 
 def salvar_fichas(fichas):
     with open(ARQUIVO_FICHAS, 'w') as f:
-        json.dump(fichas, f, indent=4)
+        json.dump(fichas, f, indent=4, ensure_ascii=False)
 
 def adicionar_ficha(fichas):
      while True:
