@@ -1,0 +1,31 @@
+{
+    "pessoas": [
+        {
+            "nome": "aaaaaaaaa",
+            "pedidos": [
+                "id3",
+                "id2"
+            ],
+            "valor_total": 159.9
+        },
+        {
+            "nome": "Rafael",
+            "pedidos": [
+                "id1",
+                "id3"
+            ],
+            "valor_total": 149.9
+        },
+        {
+            "nome": "sssssssssss",
+            "pedidos": [
+                "id2",
+                "id7",
+                "id4",
+                "id5",
+                "id4"
+            ],
+            "valor_total": 200.0
+        }
+    ]
+}
