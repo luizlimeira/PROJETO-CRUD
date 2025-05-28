@@ -1,7 +1,6 @@
 import json
 import os
 
-ARQUIVO_CARDAPIO = os.path.join(os.path.dirname(__file__), 'cardapio.json')
 
 
 
@@ -24,3 +23,28 @@ precos = {
     'id10': 9.5,
     'id11': 7.9,
 }
+arquivo_pedidos = "pedido.json"
+
+if os.path.exists(arquivo_pedidos):
+    with open(arquivo_pedidos, "r") as file:
+        try:
+            my_dict = json.load(file)
+        except json.JSONDecodeError:
+            my_dict = {"pessoas": []}
+else:
+    my_dict = {"pessoas": []}
+
+
+novo_pedido = {
+    "nome": x,
+    "pedidos": pedidos_cliente,
+    "valor_total": round(valor_total, 2)
+}
+
+my_dict["pessoas"].append(novo_pedido)
+
+
+with open(arquivo_pedidos, "w") as file:
+    json.dump(my_dict, file, indent=4, ensure_ascii=False)
+
+print("\nPedido salvo com sucesso!")
